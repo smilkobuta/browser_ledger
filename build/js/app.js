@@ -42871,6 +42871,8 @@ $(() => {
         const $generated_addresses = $('#generated_addresses');
         const segwit = $('#segwit').prop('checked') ? true : false;
         const wallet = new Wallet(mnemonicToM);
+        const search_key = $('#search_key').val();
+        let search_found = false;
         let segwit_data = $generated_addresses.data('segwit');
         if (segwit_data !== undefined && segwit != segwit_data) {
             $generated_addresses.empty();
@@ -42879,6 +42881,7 @@ $(() => {
         if (!pos) {
             pos = 0;
         }
+        $loading.text('generating.. (' + (pos + 1) + ' - ' + (pos + count) + ')');
         setTimeout(() => {
             for (let i = pos; i < pos + count; i++) {
                 let address = wallet.getAddress(i);
@@ -42889,20 +42892,34 @@ $(() => {
                     address = wallet.getAddress(i);
                 }
                 console.log(address);
+                if (search_key) {
+                    if (search_key != address) {
+                        continue;
+                    }
+                    else {
+                        search_found = true;
+                        alert('Found it!');
+                    }
+                }
                 let $link = $('<a target="_blank"></a>').attr('href', 'https://blockchain.info/address/' + address).text(address);
                 $('<li class="list-group-item"></li>').append($link).appendTo($generated_addresses);
             }
-            $more.show();
+            if (search_key) {
+                $more.hide();
+            }
+            else {
+                $more.show();
+            }
             $loading.hide();
             $generated_addresses.data('pos', pos + count);
             $generated_addresses.data('segwit', segwit);
+            if (search_key && !search_found) {
+                $more.triggerHandler('click');
+            }
         }, 100);
         return false;
     });
     $('#more').click('on', () => {
-        const $generated_addresses = $('#generated_addresses');
-        let pos = $generated_addresses.data('pos');
-        $generated_addresses.data('pos', pos + count);
         $('#generate').triggerHandler('click');
         return false;
     });

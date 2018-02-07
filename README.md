@@ -1,2 +1,5 @@
-# browser_ledger
-Ledger wallet address checker
+# Setup
+npm install
+
+# Compile
+npm run gulp build

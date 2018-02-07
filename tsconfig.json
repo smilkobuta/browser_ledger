@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "outDir": "build",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "src/*",
+        "build/*"
+      ]
+    },
+    "typeRoots" : [ "node_modules/@types" ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

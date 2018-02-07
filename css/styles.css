@@ -1,0 +1,16 @@
+#recoveryphrase {
+	height: 120px;
+}
+.addresses {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.addresses a {
+	color: #000;
+}
+#loading {
+	color: #999;
+}
+#more a {
+	color: #9cf;
+}

@@ -1,0 +1,34 @@
+{
+  "name": "browser_ledger",
+  "version": "1.0.0",
+  "description": "Browser Ledger Wallet Address Checker",
+  "main": "index.js",
+  "scripts": {
+    "test": "no test",
+    "gulp": "gulp"
+  },
+  "keywords": [
+    "bitcoin",
+    "wallet",
+    "ledger",
+    "nano",
+    "browser",
+    "address",
+    "segwit"
+  ],
+  "author": "smilkobuta@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "bip39": "^2.5.0",
+    "bitcoinjs-lib": "^3.3.2",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "browserify": "^15.2.0",
+    "gulp": "^3.9.1",
+    "tsify": "^3.0.4",
+    "typescript": "^2.7.1",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.10.0"
+  }
+}

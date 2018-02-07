@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Ledger wallet address checker</title>
+  <meta name="description" content="Ledger Nano Wallet Address Checker">
+  <meta name="author" content="smilkobuta">
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="bootstrap-4.0.0/css/bootstrap.min.css">
+  <script src="bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/cover.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body class="text-center">
+  
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">Cehck your bitcoin addresses.</h3>
+		  <!--
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Contact</a>
+          </nav>
+		  -->
+        </div>
+      </header>
+
+      <main role="main" class="inner cover container">
+		<p class="lead">This program generates bitcoin addresses of Ledger Nano.<br>Please be sure your device is <strong style="font-size:1.2em;">offline</strong>. This program runs locally.</p>
+		<form>
+		  <div class="form-group">
+			<textarea class="form-control" id="recoveryphrase" placeholder="Recovery Phrase"></textarea>
+		  </div>
+		  <div class="custom-control custom-checkbox text-left">
+			<input type="checkbox" class="custom-control-input" id="segwit" checked>
+			<label class="custom-control-label" for="segwit">Segwit address</label>
+		  </div>
+		  <button type="button" id="generate" class="btn btn-primary">Generate addresses</button>
+		</form>
+		
+		<div class="addresses row">
+		  <div class="col">
+			<ol id="generated_addresses" class="list-group">
+			</ol>
+			<ul class="list-group">
+			  <li id="loading" class="list-group-item" style="display:none;">generating..</li>
+			  <li id="more" class="list-group-item" style="display:none;"><a class="btn btn-default" href="#">more</a></li>
+			</ul>
+		  </div>
+		</div>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Created by <a href="mailto:smilkobuta@gmail.com">smilkobuta</a>.</p>
+          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        </div>
+      </footer>
+    </div>
+
+  <script src="./build/js/app.js"></script>
+</body>
+</html>
